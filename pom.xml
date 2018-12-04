@@ -25,7 +25,7 @@
         <guava.version>27.0-jre</guava.version>
 
         <skip.jooq.generation>false</skip.jooq.generation>
-        <database.url>jdbc:mysql://localhost:3306/</database.url>
+        <database.url>jdbc:postgresql://localhost:5432/mydb</database.url>
 
         <!--<jacoco-plugin.version>0.7.9</jacoco-plugin.version>-->
         <!--<coveralls-plugin.version>4.3.0</coveralls-plugin.version>-->
@@ -76,8 +76,9 @@
             <artifactId>HikariCP</artifactId>
         </dependency>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.4.1212</version>
         </dependency>
 
         <dependency>
@@ -157,19 +158,19 @@
                 </executions>
                 <configuration>
                     <jdbc>
-                        <driver>com.mysql.cj.jdbc.Driver</driver>
+                        <driver>org.postgresql.Driver</driver>
                         <url>${database.url}</url>
-                        <user>root</user>
-                        <password></password>
+                        <user>user_admin</user>
+                        <password>user_admin_passwd</password>
                     </jdbc>
                     <generator>
                         <name>org.jooq.codegen.JavaGenerator</name>
                         <database>
-                            <name>org.jooq.meta.mysql.MySQLDatabase</name>
+                            <name>org.jooq.meta.postgres.PostgresDatabase</name>
                             <includes>.*</includes>
                             <excludes></excludes>
-                            <!--<inputSchema></inputSchema>--> <!-- This will generate all schema of db, better to only generate the one interested in -->
-                            <inputSchema>information_schema</inputSchema>
+                      
+                           --> <inputSchema>information_schema</inputSchema>
                         </database>
                         <target>
                             <packageName>org.blackdread.sqltojava.jooq</packageName>

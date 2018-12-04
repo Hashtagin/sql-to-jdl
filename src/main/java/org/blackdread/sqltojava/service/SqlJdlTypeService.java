@@ -137,7 +137,7 @@ public class SqlJdlTypeService {
     }
 
     protected List<String> jdlFloat() {
-        return Lists.newArrayList("float");
+        return Lists.newArrayList("float","real");
     }
 
     protected List<String> jdlLocalDate() {
@@ -153,7 +153,7 @@ public class SqlJdlTypeService {
     }
 
     protected List<String> jdlBigDecimal() {
-        return Lists.newArrayList("decimal");
+        return Lists.newArrayList("decimal","numeric");
     }
 
     protected List<String> jdlInstant() {

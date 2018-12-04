@@ -12,9 +12,11 @@ import java.util.Optional;
  */
 public class TableInformation {
 
+
     private final String name;
 
     private final String comment;
+
 
     public TableInformation(final String name) {
         this(name, null);

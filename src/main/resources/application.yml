@@ -1,9 +1,9 @@
 spring:
     datasource:
             type: com.zaxxer.hikari.HikariDataSource
-            url: jdbc:mysql://localhost:3306/?useUnicode=true&characterEncoding=utf8&useSSL=false
-            username: root
-            password:
+            url: jdbc:postgresql://localhost:5432/sybase?useUnicode=true&characterEncoding=utf8&useSSL=false
+            username: user_admin
+            password: user_admin_password
             hikari:
                 data-source-properties:
                     cachePrepStmts: true
@@ -11,7 +11,7 @@ spring:
                     prepStmtCacheSqlLimit: 2048
                     useServerPrepStmts: true
     jooq:
-        sql-dialect: mysql
+        sql-dialect: Postgres
 
 
 application:

@@ -1,7 +1,5 @@
-[![Build Status](https://travis-ci.org/Blackdread/sql-to-jdl.svg?branch=master)](https://travis-ci.org/Blackdread/sql-to-jdl)
-[![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/Blackdread/sql-to-jdl)
 
-# sql-to-jdl
+# sql-to-jdl From mysql and postgres
 Tool to translate SQL databases to JDL format of jHipster (Created due to existing databases to be generated with jHipster and build angular-java web)
 
 # Why not use tools like UML provided on jHipster?
@@ -11,12 +9,15 @@ Tool to translate SQL databases to JDL format of jHipster (Created due to existi
   - already working UML design with MySQL Workbench
 
 # How to use
-Run "mvn compile" at least once to let jOOQ generate some required tables (see [Issue solved](https://github.com/Blackdread/sql-to-jdl/issues/2)).
 
-Set properties file:
-- Schema name to export
-- Tables names to be ignored
-- Path of export file
+1. Run "mvn compile" at least once to let jOOQ generate some required Classes (see [Issue solved](https://github.com/Blackdread/sql-to-jdl/issues/2)).
+
+2. Set properties file:
+    - Schema name to export
+    - Tables names to be ignored
+    - Path of export file
+
+3. Run spring-boot run goal to generate jdl according to properties setuped
 
 # After JDL file is generated
 Still have some manual steps to do:
@@ -37,5 +38,10 @@ Table is treated as enum if only 2 columns and both are: "id" AND ("code" OR "na
 
 Table is treated as ManyToMany if only 2 columns and both are foreign keys
 
+# TODO LIST
+   - [ ] Have all postgresql types supported.
+
 # Links
 [jHipster JDL](http://www.jhipster.tech/jdl/)
+
+# Forked from [SQL-To-JDL by BlackDread](https://github.com/Blackdread/sql-to-jdl)
