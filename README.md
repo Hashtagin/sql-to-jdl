@@ -40,6 +40,7 @@ Table is treated as ManyToMany if only 2 columns and both are foreign keys
 
 # TODO LIST
    - [ ] Have all postgresql types supported.
+   - [ ] Add Postgis geometry types.
 
 # Links
 [jHipster JDL](http://www.jhipster.tech/jdl/)
